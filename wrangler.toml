@@ -1,0 +1,8 @@
+name = "gstin-validation"
+main = "src/worker.js"
+compatibility_date = "2024-12-29"
+workers_dev = true
+preview_urls = false
+
+[observability]
+enabled = true
