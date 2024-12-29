@@ -13,7 +13,7 @@ This project is a Cloudflare Worker that validates and fetches details for a giv
 To use the worker, make a GET request to the worker URL with the `gstin` query parameter. For example:
 
 ```
-https://your-worker.your-username.workers.dev/?gstin=29AAAAA0000A1Z5
+[https://your-worker.your-username.workers.dev/?gstin=29AAAAA0000A1Z5](https://gstin-validation.devstroop.workers.dev/)
 ```
 
 ## Functions
