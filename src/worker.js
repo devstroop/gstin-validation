@@ -13,6 +13,7 @@ import { load } from "cheerio";
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
+    // Example: https://your-worker.your-username.workers.dev/?gstin=29AAAAA0000A1Z5
     const gstin = url.searchParams.get("gstin");
 
     if (!gstin || !isValidGSTIN(gstin)) {
@@ -85,14 +86,14 @@ function parseGstinDetails(responseBody) {
   const $ = load(responseBody);
 
   return {
-    "Business Name": $("tr:nth-child(1) td:nth-child(2)").text().trim(),
-    "PAN Number": $("tr:nth-child(2) td:nth-child(2)").text().trim(),
-    "Legal Name": $("tr:nth-child(3) td:nth-child(2)").text().trim(),
-    Address: $("tr:nth-child(4) td:nth-child(2)").text().trim(),
-    "Entity Type": $("tr:nth-child(5) td:nth-child(2)").text().trim(),
-    "Registration Type": $("tr:nth-child(6) td:nth-child(2)").text().trim(),
-    "Department Code and Type": $("tr:nth-child(7) td:nth-child(2)").text().trim(),
-    "Nature of Business": $("tr:nth-child(8) td:nth-child(2)").text().trim(),
-    "Registration Date": $("tr:nth-child(9) td:nth-child(2)").text().trim(),
+    "businessName": $("tr:nth-child(1) td:nth-child(2)").text().trim(),
+    "paNNumber": $("tr:nth-child(2) td:nth-child(2)").text().trim(),
+    "legalName": $("tr:nth-child(3) td:nth-child(2)").text().trim(),
+    "address": $("tr:nth-child(4) td:nth-child(2)").text().trim(),
+    "entityType": $("tr:nth-child(5) td:nth-child(2)").text().trim(),
+    "registrationType": $("tr:nth-child(6) td:nth-child(2)").text().trim(),
+    "departmentCodeAndType": $("tr:nth-child(7) td:nth-child(2)").text().trim(),
+    "natureOfBusiness": $("tr:nth-child(8) td:nth-child(2)").text().trim(),
+    "registrationDate": $("tr:nth-child(9) td:nth-child(2)").text().trim(),
   };
 }
