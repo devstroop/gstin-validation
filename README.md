@@ -14,7 +14,6 @@ To use the worker, make a GET request to the worker URL with the `gstin` query p
 
 ```
 https://your-worker.your-username.workers.dev/?gstin=29AAAAA0000A1Z5
-
 ```
 
 ## Functions
